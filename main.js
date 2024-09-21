@@ -1,1 +1,7 @@
-console.log("nicolas viado")
+const express = require("express")
+const app = express();
+
+
+app.listen(8000, ()=>{
+  console.log("aberto na porta 8000")
+})
