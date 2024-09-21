@@ -11,5 +11,8 @@
     "url": "https://github.com/dooley404/restaurante-sigma.git"
   },
   "author": "dooley & n1col4show",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
 }
