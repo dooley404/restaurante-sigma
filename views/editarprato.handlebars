@@ -1,0 +1,30 @@
+<h1>Editar prato</h1>
+
+<form action="/pratos/editar/{{prato.id}}" method="POST">
+  <div class="form-group">
+    <label for="nome">Nome do Prato</label>
+    <input type="text" class="form-control" name="nome" value="{{prato.nome}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="descricao">Descrição</label>
+    <textarea class="form-control" name="descricao" required>{{prato.descricao}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="preco">Preço</label>
+    <input type="number" class="form-control" name="preco" value="{{prato.preco}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="imagem">Imagem</label>
+    <input type="text" class="form-control" name="imagem" value="{{prato.imagem}}">
+  </div>
+
+  <div class="form-group">
+    <label for="ingredientes">Ingredientes</label>
+    <textarea class="form-control" name="ingredientes">{{prato.ingredientes}}</textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+</form>

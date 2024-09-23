@@ -17,21 +17,43 @@ const Pedidos = sequelize.define("pedidos", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  descricao: {
-    type: Sequelize.TEXT,
-  },
-  preco: {
-    type: Sequelize.DECIMAL(10, 2), //00000000,00
+  precoTotal: {
+    type: Sequelize.DECIMAL(10, 2),
     allowNull: false,
   },
   status: {
     type: Sequelize.STRING,
     defaultValue: "pendente",
   },
+  observacoes:{
+    type:Sequelize.TEXT
+  }
+});
+
+const Pratos = sequelize.define("pratos", {
+  nome: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  descricao: {
+    type: Sequelize.TEXT,
+  },
+  preco: {
+    type: Sequelize.DECIMAL(10, 2),
+    allowNull: false,
+  },
+  imagem: {
+    type: Sequelize.STRING,
+  },
+  ingredientes: {
+    type: Sequelize.JSON,
+  },
 });
 
 module.exports = {
   Sequelize,
   sequelize,
-  Pedidos
+  Pedidos,
+  Pratos
 };
+

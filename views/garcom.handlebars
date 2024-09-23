@@ -1,16 +1,21 @@
 <form action="/garcom/criarpedido" method="POST">
 
-<label class="form-label" for="nome">Nome pedido</label>
-<input type="text" class="form-control" name="nome">
+<label class="form-label" for="nome">Numero Mesa</label>
+<input type="number" class="form-control" name="nome">
+<br>
 
 
-<label class="form-label" for="descricao">Descrição</label>
-<input type="text" class="form-control" name="descricao">
+<select class="form-select" aria-label="Default select example"> 
+  <option selected>Escolha um prato</option>
+  {{#each prato}}
+  <option value="{{this.id}}">{{this.nome}}</option>
 
+  {{/each}}
+</select>
 
 <label class="form-label" for="preco">Preço</label>
 <input type="text" class="form-control" name="preco">
 
 <br>
-<button class="btn btn-outline-success me-2" type="button">Enviar pedido</button>
+<button class="btn btn-outline-success me-2" type="submit" >Enviar pedido</button>
 </form>
