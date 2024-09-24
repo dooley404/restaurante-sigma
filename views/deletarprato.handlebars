@@ -1,6 +1,9 @@
+
 <form action="/pratos/deletar/{{prato.id}}" method="POST" style="display:inline;">
-  <h2>Deseja mesmo deletar {{prato.nome}}?</h2>
+  <h2>Deseja mesmo deletar {{prato.nome}}?</h2> 
+  <a class="btn btn-primary" href="/pratos" role="button">Voltar</a>
   <button type="submit" class="btn btn-danger">
     <i class="bi bi-trash"></i> Deletar
   </button>
+ 
 </form>

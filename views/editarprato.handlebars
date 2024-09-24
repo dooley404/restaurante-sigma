@@ -5,26 +5,38 @@
     <label for="nome">Nome do Prato</label>
     <input type="text" class="form-control" name="nome" value="{{prato.nome}}" required>
   </div>
-
+<br>
   <div class="form-group">
     <label for="descricao">Descrição</label>
     <textarea class="form-control" name="descricao" required>{{prato.descricao}}</textarea>
   </div>
-
+<br>
   <div class="form-group">
     <label for="preco">Preço</label>
     <input type="number" class="form-control" name="preco" value="{{prato.preco}}" required>
   </div>
-
+<br>
   <div class="form-group">
     <label for="imagem">Imagem</label>
     <input type="text" class="form-control" name="imagem" value="{{prato.imagem}}">
   </div>
-
+<br>
   <div class="form-group">
     <label for="ingredientes">Ingredientes</label>
     <textarea class="form-control" name="ingredientes">{{prato.ingredientes}}</textarea>
   </div>
+ <br>
+<select class="form-select" name="categoria">
+  <option value="prato" selected>{{prato.categoria}}
+  <option value="{{prato.categoriaInvertida}}">{{prato.categoriaInvertida}}</option>
+</select>
+  <br>
 
+  <a href="/pratos" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i>
+    Voltar
+  </a>
+  
   <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+  <br>
 </form>

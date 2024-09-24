@@ -21,6 +21,9 @@ const Pedidos = sequelize.define("pedidos", {
     type: Sequelize.DECIMAL(10, 2),
     allowNull: false,
   },
+  numeroMesa: {
+    type:Sequelize.INTEGER,
+  },
   status: {
     type: Sequelize.STRING,
     defaultValue: "pendente",
@@ -42,6 +45,10 @@ const Pratos = sequelize.define("pratos", {
     type: Sequelize.DECIMAL(10, 2),
     allowNull: false,
   },
+ categoria:  {
+    type: Sequelize.ENUM('prato', 'bebida'),
+    allowNull:false
+  }, 
   imagem: {
     type: Sequelize.STRING,
   },

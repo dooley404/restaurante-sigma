@@ -3,12 +3,20 @@ const router = express.Router();
 const { Pedidos, Pratos } = require("../models/db");
 
 router.get("/", (req, res) => {
-  Pratos.findAll().then((pratos)=>{
-    res.render("garcom", {prato: pratos.map((p)=>({
-      nome:p.nome
-    }))});
-  })
-
+  Pratos.findAll({ where: { categoria: "prato" } }).then((pratos) => {
+    Pratos.findAll({ where: { categoria: "bebida" } }).then((bebida) => {
+      res.render("garcom", {
+        prato: pratos.map((p) => ({
+          nome: p.nome,
+          preco: p.preco,
+        })),
+        bebida: bebida.map((b) => ({
+          nome: b.nome,
+          preco: b.preco,
+        })),
+      });
+    });
+  });
 });
 
 router.post("/criarpedido", (req, res) => {
